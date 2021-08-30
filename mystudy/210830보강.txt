@@ -1,0 +1,100 @@
+디자인은 알아서 할 것
+
+목표 - 로그인 화면 => 정보창
+
+전화번호부
+(개인전화번호부)
+
+autoset10
+php 확장모듈 다시한번
+
+bz2
+com_dotnet
+curl
+exif
+fileinfo
+ftp
+gd2
+gettext
+inti
+mbstring
+mysqli
+openssl
+pdo_mysql
+sockets
+sqlite3
+xmlrpc
+xsl
+------------------------------------------------
+PHP 적용 방법
+
+1. PHP를 MAIN으로
+
+<?
+	echo 'html~~~~~~~~'
+?>
+doctype 부터 해서 모든걸 다 php에
+
+2. PHP를 SUB로 (필요할 때만)
+
+<html>
+	<?
+		echo '~~~'
+	?>
+	<div></div>
+	<?
+		~~
+	?>
+</html>
+------------------------------------------------
+
+
+
+
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<title>
+<?
+	echo 'LOGIN';
+?>
+		</title>
+		<style>
+			* { margin: 0; padding: 0px; }
+			/* LOGIN ELEMENT DESIGN */
+			.inName {  }
+			.inPw {  }
+		</style>
+	</head>
+	<body id="secBody">
+		<Main id="secMain"></main>
+	</body>
+	<script>
+		function loginProcess() {
+			//Login Element
+			let inForm = '<form action="./index.php" method="get">';
+				//get은 php를 사용하기 위함.
+			let inName = '<input type="text" class="inName" placeholder="ID 입력">';
+			let inPw = '<input type="text" id="inPw" class="inPw" placeholder="Password 입력">';
+			let inSubmit = '<input type="submit" value="로그인">';
+			let inFormClose = '</form>';
+			$('#secMain').html( inForm + inName + inPw + inSubmit + inFormClose );
+			
+		}
+		loginProcess();
+		// 위와 같이 한 이유는 컴파일로 다 처리하고 싶어서.
+		// PHP 예정
+		$('#inPw').on('click', function(){alert(1);}); //late Binding, Overloading
+		//없던 요소가 중간에 생성되어도 적용 가능
+		//javascript는 못잡을 확률이 높다.
+		//jquery는 랜더링을 함.
+
+	</script>
+</html>
+
+----------
+고민 해야함..
+php를 주로쓸지 부로쓸지
+

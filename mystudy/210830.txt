@@ -1,0 +1,193 @@
+반응형 개론
+
+반응형이 쓰이는 이유 
+
+PC 화면 을
+->핸드폰
+->PAD
+--------------- 엉망
+
+== 사이트를 3개 제작 (PC용 스마트폰용 패드용)
+===거기서 또 apple, android로 나뉨
+====기기 스펙에 따라 또 달라짐 
+위 과정을 적응형 (세밀하게 제작 가능)
+--------------- 결과 => 제작 비용 5배 이상 
+
+반응형은 해법이 되지 않는다.
+네이버, 다음 등 사이트를 보면 
+PC버전과 모바일버전이 따로 있음(적응형)
+PC에서 모바일 페이지를 보면 크기에 따라 PAD용 MOBILE용으로 나뉨(반응형)
+(반응형이든 적응형이든 모든 기기에 똑같은 화면이 나올 수 없음.)
+
+유지보수 간편하지 않음!
+
+--------------- 
+px의 한계
+
+HD - 1366(1360) * 768
+FHD - 1920 * 1080
+QHD - 2560 * 1440 (통상 2K모니터)
+UHD - 3840 * 2160 (통상 4K모니터)
+
+HD와 UHD의 정보처리량은 단순 px수 계산만으로도 약 8배
+
+현재 디자인은 가로폭 1200을 넘지 않도록 함
+(HD의 가로폭이 1200 이기 때문에)	
+
+반응형의 가장 기초적인 방법
+px이 아니라 %로 적용
+
+미디어쿼리 
+어떠한 기기에 어떤종류의 미디어인지, 미디어의 하면크기는 어느정도인지
+미디어에게 질문하고 감지하여 웹사이트를 변경하는 기술
+
+쿼리 = 질의 query
+
+뷰포트
+화면에 보이는 영역을 제어하는 기술
+
+미디어쿼리로 기기의 화면감지
+=> 그것을 이용하여 뷰포트로 기기의 화면을 제어
+
+ex)
+@media all and (min-width: ~~px){
+	body{
+		background: #a0a0a0;
+	}	
+}
+
+
+--------------------------------------------------
+javascript와 jquery에서의 map() grep() 까먹지 말 것
+
+218p~ 속성 조작 method
+
+
+
+vvvv = $(***).html()
+vvvv += "*******";
+$(****).html(vvvv);
+
+
+<input type="checkbox" ~~~~ checked=chedcked>
+			    ----------------
+					true / false
+
+
+offset() 
+=> 웹문서 시작부터에서의 거리
+
+position()
+=> 포지션 기준이 되는 요소 시작부터에서의 거리
+
+
+---------------------------------------------------------
+
+PHP 학습 전 선행학습
+
+
+FrontEnd < ====== > BackEnd
+ex)
+백엔드가 일정 시간마다 A라는 파일에 Data를 저장하면
+프론트엔드는 그 파일만 가져와서 뿌림
+그 A 파일을 자료교환파일이라 하는데
+이 역할을 하는 언어가 
+JSON / XML
+
+----------
+JSON
+javascript object notation
+
+{
+	"employees" : [
+		{ "firstName" : "지은" , "lastName" : "이" },
+		{ "firstName" : "윤아" , "lastName" : "임" },
+		{ "firstName" : "수연" , "lastName" : "정" }
+	]
+}
+
+
+실제로 eval을 사용하지는 않는다.
+
+
+JSON.stringify()
+=> 객체를 문자열화 함.
+
+JSON.parse()
+=> 문자열을 객체화 함.
+
+제이슨의 확장자 .json
+~~~.json
+
+제이슨은 
+a function
+a data
+undefined 
+의 데이터 타입을 사용 할 수 없다.
+
+
+표기법
+
+javascript 
+{ name: "john"}
+
+json
+{ "name":"john"}
+
+JSON STRINGS
+{ "name":"John" }
+ 
+
+JSON NUMBERS
+{ "age":30 }
+ 
+
+JSON OBJECTS
+{
+"employee":{ "name":"John", "age":30, "city":"New York" }
+}
+ 
+
+JSON ARRAYS
+{
+"employees":[ "John", "Anna", "Peter" ]
+}
+ 
+
+JSON BOOLEANS
+{ "sale":true }
+ 
+
+JSON NULL
+{ "middlename":null }
+
+
+-------------------------------------------------------
+
+문제 
+210830/JSON/example/BB.txt에서
+
+John(31) ( dog - Fido, cat - Felix, hamster - Lightning )
+ZARD(21) ( dog - HOHO, hamster - HAHA)
+CDR(21) (hamster - HIHI)
+
+를 출력
+
+--------------------------------------------------------------
+
+
+JSON 형태의 함수는 사용하지 말 것.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

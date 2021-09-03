@@ -1,0 +1,37 @@
+<script>
+let my0 = {
+	[
+	"rank": 1,
+	"song": "Butter",
+	"singer": "BTS",
+	"member": [ "뷔", "진", "정국", "RM", "지민", "제이홉", "슈가" ],
+	"pic": [ "bts1.jpg", "bts2.jpg", "bts3.jpg" ],
+	"rankPosition": { "week2ago" : "+3", "week1ago" : "+5" }
+	"liveConcert": [
+		{ "USA": [ "Newyork", "LA", "Chicago" ] },
+		{ "JAPAN": [ "Tokyo", "Osaka" ] },
+		{ "KOREA": [ "Seoul", "Busan", "Ansan", "Dokdo" ] }
+	]
+}
+for(let mykey in my0) {
+	switch(myKey) {
+		case "member" : 
+		case "pic" :
+			document.write( myKey + " : " );
+			my0[myKey].forEach(function( v, i ){
+			document.write( v + " " );
+			});
+			document.write( "<br>" );
+			break;
+		case "rankPosition" :
+			document.write( myKey + " : " );
+			for( let rKey in my0[myKey] ) {
+				document.write( rKey + " " + my0[myKey][rKey] + " " );
+			}
+			document.write("<br>");
+			break;
+		default:
+			document.write( myKey + " - " + my0[myKey] + "<br>" );
+	}
+}
+</script>

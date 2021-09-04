@@ -1,0 +1,102 @@
+Perl
+문자열의 일치
+정규식
+
+
+t.e 
+-> the, tie, toe 등등 settle에도 포함되어 있다
+
+^t.e 
+위와 같으나 문자열/줄의 처음에 있어야 함 settle은 포함 안됨
+
+^.e 
+he, me, regard 등이  문자열/줄의 처음에 있을 경우
+
+t.e$ 
+toe, necktie 등으로 끝나는 문자열
+
+s*he
+she, he, ssssssssssshe, the, tshe 등
+
+s+he
+she, sshe, ssssssssssshe, tshe 등 단 he, the 는 안된다.
+
+s?he 
+he 또는 she
+
+^s?he$ //^ 문자열의 시작 $문자열의 끝 (he포함 s가 있던지 없던지)
+he또는 she 한줄에 두가지만 허용 (sshe는 안됨)
+
+.* // . 은 문자 1자 *은 뒤에 글이 있던지 없던지
+
+^$ //시작과 끝만있다
+빈 줄/ 빈 문자열
+
+o*p // o가 1개 있던지 여러개있던지
+op, ooop, ooooooooooooooooop
+
+h*at // 
+at도 가능 
+
++ 1또는 몇 개
+
+? 0또는 1개 
+o?p 는 p 아니면 op , oooooooooooop도 가능 (글자가 들어있는지의 여부)
+
+^ 문자의 맨 처음
+$ 문자의 맨 끝
+
+^t.e  ( 첫 글자가 t )
+t.e$ ( 끝 글자가 e )
+
+^.e (e로 끝나는 단어가 문자열/줄의 맨 처음)
+
+[] < 문자클래스(character class)
+문자클래스 안에 아무리 글자가 많아도 하나만 적용
+
+[-0-9]
+-9 하나 or 숫자 하나
+
+[0-9a-fA-F]
+16진수 한자리
+
+h[eao]y
+hey or hay or hoy
+
+h[^eao]y 
+hey, hay, hoy를 제외한 /h.y/
+
+[^a-z] 
+소문자 빼고 모두 다
+
+[a-z]+
+소문자가 한 자, 또는 줄줄이 있는 것들
+
+[tH][hT][eE]
+the, thE, tHE, The, thE, THe, THE 등 
+
+| 는 or를 의미함
+
+\n      개행문자.
+\t      탭.
+\w      문자 또는 숫자. [a-zA-Z0-9]와 같습니다.
+\W      \w가 아닌 것. [^a-zA-Z0-9]와 같습니다.
+\d      십진수. [0-9]와 같습니다.
+\D      십진수 아닌 것. [^0-9]와 같습니다.
+\s      공백문자. space, 탭, 개행문자 등.
+\S      공백문자 아닌 것.
+\b      단어의 경계(boundary). [ ]의 바깥에서만 사용.
+        "the green grass of home"의 \bthe\b, \bgreen\b,
+           \bgrass\b, \bof\b, \bhome\b.
+        \bthe\b와 \bhome\b도 포함됨에 유의하세요.
+\B      단어의 경계가 아닌 것.
+
+{}는 문자, 그룹의 개수를 지정
+
+
+ba(na){2} => banana만
+ba(na){1,2} => bana, banana 만 
+ba(na){2,5} => banana, bananana, banananana, bananananana 만 해당
+o{2,4} => oop, ooop, oooop 
+
+특수 문자들 ^$|[]()W/{}*.?+ 등을 그자체로 사용할 때에는 앞에 \ 를 붙일 것!

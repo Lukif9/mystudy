@@ -1,0 +1,53 @@
+PHP
+
+파일관련 함수
+
+fopen()
+  -해당 경로의 파일을 읽기or쓰기 모드로 열어줌
+  -fopen("절대경로명/파일")
+  -fopen("url주소", "모드")
+
+fclose()
+  -fopen으로 열린파일을 닫는다.
+  -fclose($fp)
+
+fread()
+  -파일포인터가 가리키는 파일의 내용을 지정한 크기만큼 읽어들임
+  -fread($fp, "크기지정(bite)")
+
+feof()
+  -현재 파일의 포인터가 파일의 끝인지?
+  -feof($fp)
+
+fputs()
+  -파일을 a 또는 w 모드로 열어 문자열을 파일에 기록
+  -fputs($fp, "문자열")
+
+fwrite()
+  -파일에 문자를 기록
+  -fwrite($fp, "문자열")
+
+fpassthru()
+  -현재 위치에서 파일의 끝까지 읽어옴
+  -fpassthru($fp)
+
+readfile()
+  -fpassthru와 비슷함 fopen()없이 바로 파일을 읽어옴 (절대경로 포함)
+  -readfile("절대경로 또는 상대경로/파일명")
+
+fgetc()
+  -파일로부터 한 문자를 읽어옴
+  -fgetc($fp)
+
+filesize()
+  -파일의 크기를 바이트로 계산
+  -filesize("파일경로/파일명")
+
+file_exists()
+  -해당 파일이 존재하는지 파일이름으로 검사
+  -file_exists("파일경로/파일명")
+
+
+
+
+

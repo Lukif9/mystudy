@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+        <head>
+                <meta charset="utf-8">
+                <style>
+                        * { margin: 0; padding: 0; }
+                        .allBox {
+                                width: 600px;
+                                height: 150px;
+                                border: 1px solid black;
+                        }
+                        .topBar {
+                                width: 600px;
+                                height: 50px;
+                                background-color: lightgray;
+                        }
+                                .tabMenu {
+                                        width: 100px;
+                                        height: 50px;
+                                        font-size: 24px;
+                                        line-height: 48px;
+                                        text-align: center;
+                                        color: black;
+                                        display: inline-block;
+                                        float: left;
+                                }
+                        .exBox {
+                                width: 600px;
+                                height: 100px;
+                        }
+                        .tabMenu:hover {
+                                background-color: gray;
+                        }
+                </style>
+        </head>
+        <body>
+                <div class="allBox">
+                        <div class="topBar">
+                                <div class="tabMenu" id="tabMenu1">London</div>
+                                <div class="tabMenu" id="tabMenu2">Paris</div>
+                                <div class="tabMenu" id="tabMenu3">Tokyo</div>
+                        </div>
+                        <div class="exBox" id="exBox"></div>
+                        <script>
+                                let tabMenu1 = document.getElementById("tabMenu1");
+                                let tabMenu2 = document.getElementById("tabMenu2");
+                                let tabMenu3 = document.getElementById("tabMenu3");
+                                const exname = [
+                                        "Londen",
+                                        "Paris",
+                                        "Tokyo"
+                                ];
+                                const excon = [
+                                        "런던은 영국의 수도이다.",
+                                        "파리는 프랑스의 수도이다.",
+                                        "도쿄는 일본의 수도이다."
+                                ];
+                                this.addEventListener("click", function(e){
+                                        switch(e.target.id){
+                                                case "tabMenu1":
+                                                        let excontents1 = "";
+                                                        excontents1 += "<h2>" + exname[0] + "</h2>" + "<br>";
+                                                        excontents1 += excon[0];
+                                                        document.getElementById("exBox").innerHTML = excontents1;
+                                                        break;
+
+                                                case "tabMenu2":
+                                                        let excontents2 = "";
+                                                        excontents2 += "<h2>" + exname[1] + "</h2>" + "<br>";
+                                                        excontents2 += excon[1];
+                                                        document.getElementById("exBox").innerHTML = excontents2;
+                                                        break;
+
+                                                case "tabMenu3":
+                                                        let excontents3 = "";
+                                                        excontents3 += "<h2>" + exname[2] + "</h2>" + "<br>";
+                                                        excontents3 += excon[2];
+                                                        document.getElementById("exBox").innerHTML = excontents3;
+                                                        break;
+                                        }
+                                });
+                        </script>
+                </div>
+        </body>
+</html>

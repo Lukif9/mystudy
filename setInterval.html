@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setinteval</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .numA, #sA{
+            font-size: 3rem;
+            width: 100px;
+            height:  100px;
+            background-color: pink;
+            border-radius: 50%;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="sA"></div>
+    <div id="numA" class="numA">0</div>
+<script>
+	let numA = document.getElementById("numA");
+	let sA = document.getElementById("sA");
+	let countN = 1;
+	sA.innerHTML = "S1";
+	setInterval (function(){
+		numA.innerHTML = countN++;
+		if( numA == countN*5) {
+			setTimeout(function(){
+				if( numA.style.borderRadius == "0%" ) {
+					numA.style.borderRadius = "50%";
+				} else {
+					numA.style.borderRadius = "0%";
+				}
+			}, 5000);
+		} else {
+			clearTimeout();
+		}
+	}, 1000);
+</script>
+// 고친 후 다시 올릴 것.

@@ -1,0 +1,24 @@
+toUTCStriing(); 
+
+협정 세계시로 반환 함
+(UTC와 GMT의 시간은 동일)
+
+
+e.preventDefault()
+
+=> html에서 페이지 이동이나 전송을 막는 함수
+
+e.stopPropagation()
+
+=> 상위 element에 전달되지 않게 막아주는 함수
+
+return false;
+
+=> 이벤트의 콜백 함수가 return false를 만나는 즉시 실행이 중단됨
+JQUERY를 사용하지 않을 시 preventDefault 와 같음
+JQUERY를 사용 시 preventDefault와 stopPropagation의 동작이 동시 실행
+
+
+preventDefault 는 태그의 고유의 동작을 중단시키고
+stopPropagation 은 이벤트의 전파를 중단시킨다.
+

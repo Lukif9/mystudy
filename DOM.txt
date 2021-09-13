@@ -1,0 +1,15 @@
+JAVASCRIPT
+
+DOM - 제어대상 성택
+
+document.getElementByTagName
+
+해당 태그명의 객체를 찾아 그 리스트를 NodeList라는 유사배열에 담아 반환
+
+document.getElementByClassName
+
+해당 클래스명의 객체
+
+document.getElementById
+
+해당 아이디의 객체

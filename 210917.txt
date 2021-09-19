@@ -1,0 +1,231 @@
+﻿그누보드 등 포트폴리오 2개 정도 준비 할 것 (쓸 줄 안다는 의미)
+SASS도 종류가 많음. 
+
+SASS
+
+
+
+
+
+
+--------------------------------------------------------------------------
+
+-STRING FUNCTION
+
+
+    박스는 index개념이 없고 count개념이기 때문에 1부터 시작
+    (1-base)
+
+    quote(Hello world!) //따움표 생성
+	-> 결과: "Hello world"
+
+    str-index("Hello world", "H") //H가 몇번째 문자열에 있는지
+	-> 결과: 1
+
+    str-insert("Hello world!", " wonderful", 6) //6번째에 삽입
+	-> 결과: Hello wonderful world!
+
+    str-length("Hello world!") //문자열의 길이
+	-> 결과: 12
+
+    str-slice("Hello world!", 2, 5) //2번째 글자부터 5번째 글자까지
+	-> 결과: "ello"
+
+    to-lower-case("Hello world!") //대문자를 소문자로 변경
+	-> 결과: "hello world!"
+
+    to-upper-case("Hello world!") //소문자를 대문자로 변경
+	-> 결과: "HELLO WORLD!"
+
+    unique-id()
+	-> 결과: 절대 겹치지않는 랜덤 문자열    
+
+    unquote("Hello world!") // 따움표 제거 
+	-> 결과: Hello world!
+
+--------------------------------------------------------------------------
+
+-NUMERIC FUNCTION
+
+
+    abs(number) //절대값
+	-> abs(-15)
+	    결과: 15
+
+    cell(number) //올림값
+	-> cell(15.20)
+	    결과: 16
+    comparable(num1, num2) //숫자의 비교
+	-> comparable(15px, 10px)
+	    결과: true
+	-> comparable(35px, 40px)
+	    결과: false
+
+    floor(number) //내림값
+	-> floor(15.80)
+	    결과: 15
+    
+    max(number...) //나열한 숫자중 가장 큰 것
+	-> max(5, 7, 9, 0, -3, -7)
+	    결과: 9
+
+    min(number...) //나열한 숫자중 가장 작은 것
+	-> min(5, 7, 9, 0, -3, -7)
+	    결과: -7
+
+    percentage(number) //숫자 1을 100% 로 봄 
+	-> percentage(1.2)
+	    결과: 120
+
+    random() //0과 1사이의 소수
+	-> random()
+	    결과: 0.45578
+
+    random(number) //랜덤에 시드값  
+	-> random(6) //1~6 사이
+	    결과: 4
+
+    round(number) //반올림
+	-> round(4.6)
+	    결과: 5
+
+--------------------------------------------------------------------------
+
+-LIST FUNCTION
+
+    append(list, value, [separator])
+	-> append((a b c), d)
+	    결과: a b c d
+	-> appen((a b c), (d), comma)//
+	    결과: a, b, c, d
+
+    index(list, value)
+	-> index(a b c, d)
+	    결과: 2
+	-> index(a b c, f)
+	    결과: null
+
+    is-bracketed(list)
+	-> is-bracketed([a b c])
+	    결과: true
+	-> is-bracketed(a b c)
+	    결과: false
+
+    join(list1, list2, [separator, bracketed])
+	-> join(a b c, d e f)
+	    결과: a b  c d e f
+	-> join((a b c), (d e f), comma)
+	    결과: a, b, c, d, e, f
+
+    length(list)
+	-> length(a b c)
+	    결과: 3
+
+    list-separator(list)
+	-> list-separator(a b c)
+	    결과: "space"
+	-> list-separator(a, b, c)
+	    결과: "comma"
+
+    nth(list, n)
+	-> nth(a b c, 3)
+	    결과: c
+
+    set-nth(list, n, value)
+	-> set-nth(a b c, 2, x)
+	    결과: a x c
+
+    zip(lists)
+	-> zip(1px 2px 3px, solid dashed dotted, red green blue)
+	    결과: 1px solid red, 2px dashed green, 3px dotted blue
+ 
+--------------------------------------------------------------------------
+
+-MAP FUNCTION
+
+
+    map-get(map, key)
+	->$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
+	  map-get($font-sizes, "small")
+	    결과: 12px
+
+    map-has-key //has가 붙으면 묻는것	
+	->$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
+	  map-has-key($font-sizes, "big")
+	    결과: false
+
+    map-keys(map)
+	->$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
+	  map-keys($font-sizes)
+	    결과: "small", "normal", "large"
+
+    map-merge(map1, map2)
+	->$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
+	  $font-sizes2: ("x-large": 30px, "xx-large": 36px)
+	  map-merge($font-sizes, $font-sizes2)
+	    결과: "small": 12px, "normal": 18px, "large": 24px, "x-large": 30px, "xx-large": 36px
+
+    map-remove(map, keys...)//키값을 제거
+	->$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
+	  map-remove($font-sizes, "small")
+	    결과: "normal": 18px, "large": 24px
+
+    map-values(map)
+	->$font-sizes: ("small": 12px, "normal": 18px, "large": 24px)
+	  map-values($font-sizes)
+	    결과: 12px, 18px, 24px
+
+--------------------------------------------------------------------------
+
+https://www.comcbt.com/
+웹디자인기능사 필기 2016-07-10
+
+틀린문제
+
+6 9 10 13 14 19 
+23 28 32 36
+41 43 44 45 50 51 60
+
+오답노트 만들 것
+
+-----------------------
+
+반응형
+
+플렉서블 박스 = 부모박스
+
+플렉서블 박스의 자식박스 = 플렉스아이템
+속상값에 의해 작동하는 순간부터 플렉스아이템이라고 부른다.
+ 
+나열한 방향 => 주축
+
+주축과 교차되는 교차축
+
+----------경우에따라 주축과 교차축이 변동 될 수 있다 (디자이너마음)
+
+
+flex-flow
+[flex-direction] [flex-wrap] //꼭 띄어써야 함
+ 
+
+justify-content
+flex-strat - 시작점
+flex-end - 끝점
+center - 중앙
+space-between 
+양옆을 붙이고 여백을 동일
+space-around
+모든 빈공간을 동일한 크기로
+
+
+
+
+
+
+
+
+
+
+
+
+

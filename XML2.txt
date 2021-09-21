@@ -1,0 +1,76 @@
+DTD
+
+  - Document Type Definition
+
+  - XML문서의 구조를 명시적으로 정의
+
+  - 역할
+	정확하고 공식적인 방법을 통해 문서의 구조 기술
+	필수적인 요소의 존재 여부 검사
+	허용되지 않는 요소의 포함 여부 검사
+	content, 트리구조 및 속성값의 규제
+
+DTD와 XML의 결합
+
+  - 하나의 XML 문서는 단 하나의 DTD와 결합 가능
+
+
+내부DTD
+<!DOCTYPE 타입[내부DTD선언]>
+
+외부DTD
+<!DOCTYPE 타입 SYSTEM 또는 PUBLIC 외부문서의 경로>
+
+Element Type Declarations
+<!ELEMENT 엘리먼트의이름 데이터타입 또는 자식엘리먼트의이름 자식엘리먼트의개수부호>
+
+
+
+Element Type 선언
+
+EMPTY
+
+  - <!ELEMENT 엘리먼트이름 EMPTY>
+
+
+Ex)
+
+DTD
+
+<?xml version="1.0" encoding="euc-kr"?>
+<!ELEMENT 이달의베스트셀러 (베스트셀러)>
+  <!ELEMENT 베스트셀러 (분야, 종류, 제목, 저자, 출판사, 출판일)>
+							------
+    <!ELEMENT 분야 (#PCDATA)>
+    <!ELEMENT 종류 (#PCDATA)>
+    <!ELEMENT 제목 (#PCDATA)>
+    <!ELEMENT 저자 (#PCDATA)>
+    <!ELEMENT 출판사 (#PCDATA)>
+    <!ELEMENT 출판일 (#PCDATA)>
+	<!ATTLIST 출판일
+	  년 CDATA #REQUIRED
+	  월 CDATA #REQUIRED
+	  일 CDATA #REQUIRED>
+
+
+XML
+
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE 이달의베스트셀러 SYSTEM "bestseller.dtd">
+<이달의베스트셀러>
+  <베스트셀러>
+    <분야>경제, 경영</분야>
+    <종류>금융, 증권</종류>
+    <제목>부자 아빠, 가난한 아빠</제목>
+    <저자>로버트 기요사키</저자>
+    <출판사>황금가지</출판사>
+    <출판일 년="2002" 월="3" 일="10"/>
+  </베스트셀러>
+</이달의베스트셀러>
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+ATTLIST
+
+<!ATTLIST 엘리먼트명 속성명 속성타입 존재여부 기본값>
+
+<!ELEMENT 출판일 EMPTY>
+<!ATTLIST 출판일
+	년 CDATA #REQUIRED
+	월 CDATA #REQUIRED
+	일 CDATA #REQUIRED>
+
+CDATA 문자열
+열거값 (선택리스트)
+ID - 그속성의 값이 유일함
+IDREF, IDREFS - ID참조
+NMTOKEN, NMTOKENS - 공백이 없는 문자열
+ENTITY, ENTITIES - 외부 파일 참조
+NOTATION - 외부파일 참조 시 어떤  프로그램을 이용하여 참조하는지?
+
+CDATA
+
+	member.dtd
+
+<?xml version="1.0" encoding="euc-kr"?>
+<!ELEMENT 회원목록 (회원)*>
+  <!ELEMENT 회원 (이름, 전화번호, 주소)>
+  <!ATTLIST 회원 등급 CDATA "준회원">
+    <!ELEMENT 이름 (#PCDATA)>
+    <!ELEMENT 전화번호 (#PCDATA>
+    <!ELEMENT 주소 (#PCDATA)>
+
+<!-- member.dtd에 저장 -->
+
+	member.xml
+
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE 회원목록 SYSTEM "member.dtd">
+<회원목록>
+  <회원 등급="정회원">
+    <이름>홍길동</이름>
+    <전화번호>011-234-5678</전화번호>
+    <주소>서울시</주소>
+  </회원>
+  <회원><!--dtd에 기본값 준회원-->
+    <이름>강감찬</이름>
+    <전화번호>068-230-6624</전화번호>
+    <주소>부산시</주소>
+  </회원>
+  <회원 등급="운영자">
+    <이름>이순신</이름>
+    <전화번호>062-230-7963</전화번호>
+    <주소>광주시</주소>
+  </회원>
+</회원목록>
+
+<!--member.xml-->
+
+dtd 파일에서. 
+속성에 열거값이 더해지면 그 값 외에 올  수 없음.
+
+ID값은 단 하나밖에 없는 값으로 다른 것이 올 수 없음.
+

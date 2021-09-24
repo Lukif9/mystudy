@@ -1,0 +1,90 @@
+SASS
+
+생각보다 많은 것들을 안 쓴다.
+
+
+selector function
+
+is-superselector(super, sub)
+	- sub에 super가 포함되어 있는지 여부
+
+
+selector-append(selectors)
+	- 문자열 개념으로 다루고 있다
+
+	selector-append("div", ".myInput")
+	Result: div.myInput
+	selector-append(".warning", "__a")
+	Result: .warning__a
+
+selector-nest(selectors)
+	
+	Example:
+	selector-nest("ul", "li")
+	Result: ul li
+	selector-nest(".warning", "alert", "div")
+	Result: .warning div, alert div
+
+selector-parse(selector)
+
+	selector-parse("h1 .myInput .warning")
+	Result: ('h1' '.myInput' '.warning')
+
+
+
+selector-replace(selector, original, replacement)
+
+	selector-replace("p.warning", "p", "div")
+	Result: div.warning
+
+selector-unify(selector1, selector2)
+	-아예 써보신적이 없음
+
+	selector-unify("myInput", ".disabled")
+	Result: myInput.disabled
+	selector-unify("p", "h1")
+	Result: null
+
+simple-selectors(selectors)	
+
+	simple-selectors("div.myInput")
+	Result: div, .myInput
+	simple-selectors("div.myInput:before")
+	Result: div, .myInput, :before
+
+
+
+
+COLOR FUNCTION
+
+rbg
+rbga
+hsl
+hsla
+grayscale
+complement
+invert
+
+
+filter
+
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_filter_all
+filter 종류 한번씩 볼 것
+
+
+box shadow
+
+box-shadow: 0 4px 8px 0 rbga(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+
+
+
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_filter_all
+
+
+
+
+
+
+

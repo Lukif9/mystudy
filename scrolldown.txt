@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ 
+#navbar {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+}
+ 
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+ 
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+</head>
+<body>
+ 
+<div id="navbar">
+  <a href="#home">호호호</a>
+  <a href="#news">하하하</a>
+  <a href="#contact">히히히</a>
+</div>
+ 
+<div style="padding:15px 15px 2500px;font-size:30px;margin-top:30px;">
+  <p><b>스크롤 다운시 없어지는 상단 메뉴.</b></p>
+  <p>자드는?</p>
+  <p>ZARD는 1991년에 첫 번째 싱글 《Good-bye My Loneliness》로 데뷔하였다. 5번째 싱글 《In my arms tonight》 발표 직후, 베이스를 담당하는 호시 히로야스(星弘泰)가 탈퇴하고 곧바로 다음 6번째 싱글 《負けないで》 직후, 기타를 맡던 마치다 후미토(町田文人)와 베이스 담당 미치쿠라 코스케(道倉康介), 키보드 담당 이케자와 기미타카(池澤公隆)가 탈퇴를 선언한 것으로 추측된다. 1991년에서 1993년에 걸쳐 탈퇴한 것이다. 2006년 데뷔 15주년을 기념하여 10월 25일 특별 앨범을 발매하였다.사카이 이즈미는 2007년 5월 27일 죽을 때까지 B-Gram Records, Inc.(지금의 Being Inc.)을 소속사로 활동하였다.</p>
+</div>
+ 
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,152 @@
+const http = require('http');
+
+http.createServer().listen();
+
+------------기본형--------------
+
+
+const http = require('http');
+
+http.createServer(
+	(req, res)
+).listen();
+
+
+참조할 사이트
+
+https://nodejs.org/dist/latest-v14.x/docs/api/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CLASS - Object에 대한 선언을 담은 Specification
+
+INSTANCE - 선언된 Object가 CPU상에 로드되어 시행중인 상태의 CLASS
+
+
+ - 일반인의 시각 CLASS=INSTANCE
+
+ - 개발자의 시각 
+	CLASS => MEMORY에 적재된 상태
+
+	INSTANCE => CPU에 적재된 상태
+
+	CLASS만으로는 실행되지 않는다.
+
+
+CLOSER
+HOSTING
+
+
+1. NPM?
+
+ 
+
+        Node Package Manager ==> 개발자들이 만든 라이브러리를 공유하고 배포하는 곳.
+
+ 
+
+        가. 설치
+
+        나. 삭제
+
+        다. 업그레이드
+
+        라. 의존성 관리
+
+2. 실습
+
+ 
+
+       가. uglify-es 를 설치
+
+ 
+
+?
+1
+npm install uglify-es -g
+ 
+
+       나. uglify-es 를 실행
+
+ 
+
+?
+1
+2
+3
+uglifyjs myfile.js -c -o myfile.min.js
+ 
+uglifyjs myfile.js -b -o myfile-beautify.js
+ 
+
+      다. 실행 결과 확인
+
+
+
+------------------------
+
+a = [100, 20, 180];
+a.sort();
+console.log(a);
+
+a = [100, 20, 80];
+a.sort(function(a,b){ return a-b; });
+console.log(a);
+
+a = [100, 20, 80];
+a.sort(function(a,b){ console.log(a,b); return a-b; });
+console.log(a);
+
+
+a.sort( function(callback){callback();});
+a.sort();
+/* ERROR */
+
+a.sort( function(){console.log("HI~~~~");})
+/* HI~~~ 출력 */
+
+
+--------------------------------------------
+
+
+// 클로저
+
+ 
+
+<script>
+var a = 0;
+function myF() {
+ var b=0;
+    return function() {
+     document.write(++a, ++b,"<br>");
+    }
+}
+var mf1 = myF();
+var mf2 = myF();
+
+mf1();
+mf1();
+mf1();
+mf2();
+mf2();
+mf2();
+</script>
+
+
+
+
+
+

@@ -1,29 +1,29 @@
-﻿<!doctpye html>
-<html lang="ko">
-	<head>
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<p id="demo"></p>
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var a = "HOHOHO ";
+var b = '<p id="AAA">HAHAHA</p><img src="./1.jpg">';
+document.write('a');
+document.write('<br>');
+document.write(a);
+document.write('<br>');
+document.write('${a}');
+document.write('<br>');
+document.write(`${a}`);
+document.write('<br>');
  
-		<script>
-			var myObj, i, j, x = "";
-			myObj = {
-  				"name":"John",
-  				"age":30,
-  				"cars": [
-    					{"name":"Ford", "models":["Fiesta", "Focus", "Mustang"]},
-    					{"name":"BMW", "models":["320", "X3", "X5"]},
-    					{"name":"Fiat", "models":["500", "Panda"] }
-  				]
-			}
-			for (i in myObj.cars) {
-  				x += "<h2>" + myObj.cars[i].name + "</h2>";
-  				for (j in myObj.cars[i].models) {
-    					x += myObj.cars[i].models[j] + "<br>";
-  				}
-			}
-			document.getElementById("demo").innerHTML = x;
-		</script>
-	</body>
+document.write('a+b');
+document.write('<br>');;
+document.write(a+b);
+document.write('<br>');
+document.write('${a}'+'${b}');
+document.write('<br>');
+document.write('${a}${b}');
+document.write('<br>');
+document.write(`${a}${b}`);
+document.write('<br>');
+</script>
+
+</body>
 </html>

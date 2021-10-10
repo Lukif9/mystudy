@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<p>클립보드로 복사</p>
+ 
+<input type="text" value="자드는 영어로 ZARD" id="myInput">
+<button onclick="myFunction()">복사</button>
+ 
+<p>document.execCommand()는 IE8이전 버전은 안됨.</p>
+ 
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}
+</script>
+ 
+</body>
+</html>
